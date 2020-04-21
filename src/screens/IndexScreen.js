@@ -1,5 +1,12 @@
 import React, { useContext } from 'react';
-import { StyleSheet, View, Text, FlatList, Button } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  Button,
+  TouchableOpacity,
+} from 'react-native';
 import { Context } from '../context/BlogContext';
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
@@ -15,8 +22,12 @@ const IndexScreen = () => {
         renderItem={({ item }) => {
           return (
             <View style={styles.row}>
-              <Text style={styles.title}>{item.title}</Text>
-              <Icon style={styles.icon} name="delete" />
+              <Text style={styles.title}>
+                {item.title} - {item.id}
+              </Text>
+              <TouchableOpacity onPress={() => console.log(item.id)}>
+                <Icon style={styles.icon} name="delete" />
+              </TouchableOpacity>
             </View>
           );
         }}
