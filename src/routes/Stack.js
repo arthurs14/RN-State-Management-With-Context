@@ -3,7 +3,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import IndexScreen from '../screens/IndexScreen';
 import ShowScreen from '../screens/ShowScreen';
 import CreateScreen from '../screens/CreateScreen';
-import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const MainStack = createStackNavigator();
 

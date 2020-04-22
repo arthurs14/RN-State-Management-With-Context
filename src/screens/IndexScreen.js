@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   addIcon: {
     fontSize: 30,
-    marginRight: 5,
+    marginRight: 10,
   },
 });
 
