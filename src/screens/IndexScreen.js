@@ -13,6 +13,14 @@ import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 const IndexScreen = ({ navigation }) => {
   const { state, addBlogPost, deleteBlogPost } = useContext(Context);
 
+  navigation.setOptions({
+    headerRight: () => (
+      <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+        <Icon name="add" style={styles.addIcon} />
+      </TouchableOpacity>
+    ),
+  });
+
   return (
     <View>
       <Button title="Add Post" onPress={addBlogPost} />
@@ -28,7 +36,7 @@ const IndexScreen = ({ navigation }) => {
                   {item.title} - {item.id}
                 </Text>
                 <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
-                  <Icon style={styles.icon} name="delete" />
+                  <Icon style={styles.deleteIcon} name="delete" />
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -51,8 +59,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
   },
-  icon: {
+  deleteIcon: {
     fontSize: 24,
+  },
+  addIcon: {
+    fontSize: 30,
+    marginRight: 5,
   },
 });
 
